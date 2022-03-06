@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/* b_baseCode_selector_002.css */
+/* reset.css ================================ */
+body { margin: 0;}
+h1 { margin: 0; }
+#wrap { width: 100%; height: 600px; background-color: #ccc;}
+/* .content_area ul > li > a > span { background-color: : #acf;} */
+div > ul > li > a > span { background-color: #acf;}
+div > ul > li > ol > li > a > span { background-color: #fff; border: 3px solid #f70; }
+div > ol > li > a { color: #555 }
+a { color: inherit;}
