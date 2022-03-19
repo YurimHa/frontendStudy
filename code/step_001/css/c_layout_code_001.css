@@ -4,10 +4,9 @@ body {
     margin: 0;
 }
 
-
 #wrap {
     width:900px; height:auto; min-height:500px;
-    margin:0 auto;
+    margin:0 auto; padding-bottom: 300px;
     background-color: beige;
 }
 
@@ -17,8 +16,67 @@ body {
     background-color: #95d6a4;
 }
 
+.inner_01 { background-color: #456ea2;}
+.inner_02 { background-color: #fff9eb;}
+.inner_03 { background-color: #ffcf5d;}
+
+.inner_01 .insert_01{background-color: #ffcf5d;}
+.inner_02 .insert_01{background-color: #db5446;}
+.inner_03 .insert_01{background-color: #7e94ff;}
+
 /* ---------------------------- */
 .box_01 > div { width:100%; height: 200px;}
-.box_01 > .inner_01 { background-color: #456ea2;}
-.box_01 > .inner_02 { background-color: #fff9eb;}
-.box_01 > .inner_03 { background-color: #ffcf5d;}
+
+/* --------------------------- */
+.box_02 > div {  float: left; width:200px; height: 100%;}
+
+/* --------------------------- */
+.box_03 > div { width: 200px; height: 50%; margin:0 auto;}
+
+/* --------------------------- */
+.box_04 { height: auto;}
+.box_04 > div { width:100%; height: 200px; }
+.box_04 .insert_01 { width: 60%; height: 200px; margin:0 auto; }
+.box_04 > .inner_01 > .insert_01 { background-color: #ffcf5d; }
+.box_04 > .inner_02 > .insert_01 { width: 45%; background-color: #db5446; }
+.box_04 > .inner_03 > .insert_01 { margin: 0; background-color: #7e94ff; }
+
+/* -------------------------- */
+.box_05 { width: 600px; height: auto;}
+.box_05 > div { float: left; width:200px; height: 600px;}
+
+.box_05:after,
+.box_05::after { content:""; display: block;
+    clear:both; width: 600px; height: 0; }
+
+/* 하나의 요소 내부에,
+1. 여러 요소들이 모두 가로로 나열 되어있는 상태일 경우 flaot:left 를 이용하여 처리
+2. 하나의 요소에 float을 사용하였다면 그 형제 요소에는 모두 float을 사용
+3. 하지만 부모요소가 높이값이 auto라면, 실제 반영되는 부모의 높이는 0가 설정되게 되어있으므로,
+4. 부모에 가상의 어떤 존재를 생성(마지막에 생성되는 :after)하여, clear:both;를 적용
+5. 단, clear:both는 반드시 block요소 이어야 한다. 
+tip. 어떠한 요소든 관계없이, float 기능을 사용하면(float:none) 해당 요소는 block 처리가 된ㄷ다.*/
+.box_05 .insert_01 { width:100%; height: 200px; }
+.box_05 > .inner_02 > .insert_01 { margin-top: 200px; }
+.box_05 > .inner_03 > .insert_01 { margin-top: 400px; }
+
+/* ------------------------ */
+.box_06 {height: auto;}
+.box_06 > div { width:100%; height: auto;}
+
+.box_06 .inner_01 .insert_01 { float: left; width: 230px; height:200px; background-color: #39725C;}
+.box_06 .inner_01 .insert_02 { float: right; width: 230px; height:200px; background-color: #7341D9;}
+.box_06 .inner_01:after, 
+.box_06 .inner_01::after { content:""; display:block; clear:both; width: 100%; height:0;}
+
+.box_06 .inner_02 .insert_01 { float: left; width:230px; height:200px; background-color: #C9A1D2}
+.box_06 .inner_02 .insert_02 { float: left; width:140px; height:200px; background-color: #76CB13}
+.box_06 .inner_02 .insert_03 { float: left; width:230px; height:200px; background-color: #0923BA}
+.box_06.inner_02:after,
+.box_06.inner_02::after { content:""; display: block; clear:both; width: 100%; height: 0;} 
+
+.box_06 .inner_03 .insert_01 { float:left; width: 370px; height:200px; background-color: #EC15A7;}
+.box_06 .inner_03 .insert_02 { float:left; width: 230px; height:200px; background-color: #D06264;}
+.box_06 .inner_03:after,
+.box_06 .inner_03::after {content:""; display: block; clear:both; width:100%; height: 0;}
+
